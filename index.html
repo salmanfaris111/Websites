@@ -1,1 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-black">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P37159WTH1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P37159WTH1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>salmanfaris.com</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="Forge an unbreakable mind. Be a man of your word. Don't waste time. Stay disciplined. Stay focused. This is the way.">
+    
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-navbutton-color" content="#000000">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #000000;
+            --text: #f5f5f7;
+            --apple-muted: #86868b;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            overflow: hidden;
+            touch-action: manipulation;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        #_ap_status_ {
+            position: fixed;
+            top: calc(1.5rem + env(safe-area-inset-top, 0px));
+            left: 50%;
+            transform: translate(-50%, -10px);
+            font-size: 12px;
+            background: rgba(30, 30, 35, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #e5e5e7;
+            padding: 7px 18px;
+            border-radius: 9999px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 60;
+            white-space: nowrap;
+            transition: opacity 0.25s cubic-bezier(0.2, 0, 0, 1), 
+                        transform 0.25s cubic-bezier(0.2, 0, 0, 1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        #_ap_status_.interactive {
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        #_ap_status_.interactive:active {
+            transform: translate(-50%, 0) scale(0.92) !important;
+            opacity: 0.8;
+            transition: transform 0.1s cubic-bezier(0.2, 0, 0, 1), opacity 0.1s ease;
+        }
+
+        #_ap_status_.visible {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+
+        ._f1 {
+            opacity: 0;
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        ._f1.v {
+            opacity: 1;
+        }
+
+        ._c1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 580px;
+            width: calc(100% - 48px);
+            text-align: center;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            will-change: transform, opacity;
+        }
+
+        #_q_ {
+            font-family: 'Inter', sans-serif;
+            white-space: pre-wrap;
+            margin-bottom: 14px;
+            color: #ffffff;
+            display: inline-block;
+            will-change: opacity;
+            transition: opacity 0.35s ease-in-out, font-family 0.35s ease;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            font-size: clamp(0.95rem, 2.4vw, 1.35rem);
+            line-height: 1.6;
+        }
+
+        #_st_ {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--apple-muted);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            transition: opacity 0.35s ease;
+            line-height: 1.6;
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="relative flex flex-col h-full overflow-hidden bg-black text-white">
+
+    <!-- Status Notification Pill -->
+    <div id="_ap_status_"></div>
+
+    <!-- Main Quote Container -->
+    <main class="_c1 _f1" id="_mc_">
+        <h1 id="_q_" class="opacity-0"></h1>
+        <div id="_st_" class="opacity-0"></div>
+    </main>
+
+    <script>
+    (function(){
+        // Quote Database
+        const _db = [
+            { t: "Be better than you were yesterday." },
+            { t: "Race one another in good deeds.\n(Qur'an 2:148)" },
+            { t: "Don't waste time. You don't get it back." },
+            { t: "Focus." },
+            { t: "The problem is,\nyou think you have a lot of time to live." },
+            { t: "Live everyday like it's your last day." },
+            { t: "Consistency." },
+            { t: "Big dreams need big sacrifices." },
+            { t: "Practice makes perfect." },
+            { t: "Do it even when you don't feel like it." },
+            { t: "Nothing changes if nothing changes." },
+            { t: "Stay different." },
+            { t: "You only have 1,440 minutes every day,\ndon’t let a single one go to waste.", id: "t_q" },
+            { t: "You can't have a million dollar dream with a minimum wage work ethic." },
+            { t: "A real man protects and provides." },
+            { t: "Don't follow the crowd. Follow the truth." },
+            { t: "Never build your happiness on\n someone else's tears." },
+            { t: "Eliminate the 'tomorrow' mindset today." },
+            { t: "The strongest man is he who controls his anger." },
+            { t: "Be a man of your word." },
+            { t: "Your habits define your future self." },
+            { t: "Hate Laziness." },
+            { t: "Always speak the truth." },
+            { t: "Time waits for no one." },
+            { t: "Quality over quantity in everything." },
+            { t: "Knowledge without action is useless." },
+            { t: "Fear Allah. Not people." },
+            { t: "Live with purpose." },
+            { t: "Never Settle." },
+            { t: "A real man protects those who are vulnerable." },
+            { t: "Every day is a second chance." },
+            { t: "Now is the time." },
+            { t: "Success is earned, not given." },
+            { t: "Focus on your growth." },
+            { t: "Stay Disciplined." },
+            { t: "A heart connected to Allah is\n never truly broken." },
+            { t: "He who is brave is free." },
+            { t: "Growth begins outside comfort zones." },
+            { t: "This is the way." },
+            { t: "Hard days make strong people." },
+            { t: "Keep showing up." },
+            { t: "Strength is built through repetition." },
+            { t: "Aim High." },
+            { t: "Do the boring work well." },
+            { t: "Consistency creates mastery." },
+            { t: "Work now, Relax later." },
+            { t: "Don't look back. You're not going that way."},
+            { t: "Every day counts." },
+            { t: "Habits decide outcomes." },
+            { t: "Growth requires discomfort." },
+            { t: "Sweat more in practice. Bleed less in war." },
+            { t: "do it scared.\ndo it tired.\ndo it anyway." },
+            { t: "When you feel like nothing is going your way, look at a person breaking a rock. They can hit a big rock 100 times and it won't even move. But on the 101st hit, it suddenly breaks into two pieces. It wasn't just that last hit that broke it,it was the result of all the hits that happened before it." },
+            { t: "It always seems impossible until it's done." },
+            { t: "Feel the fear and do it anyway." },
+            { t: "Prepare for death, for it does not wait for your readiness." },
+            { t: "Focus is a superpower in a distracted world." },
+            { t: "Weakness leaves when discipline enters." },
+            { t: "Strength is built through patience." },
+            { t: "Be strict with yourself." },
+            { t: "Zero Excuses." },
+            { t: "You already know what to do.\nYou just don’t like the cost." },
+            { t: "The brain will invent reasons to avoid pain, even when pain is the only path forward." },
+            { t: "Every wasted year makes the\n next one heavier." },
+            { t: "Do it the moment you remember it." },
+            { t: "Stick to the plan. Not your mood." },
+            { t: "Be the change that you wish to see in the world." },
+            { t: "5,4,3,2,1. Act Now." },
+            { t: "Indeed Shaitan is ever, to mankind,\na clear enemy.\n[Qur'an 17:53]"},
+            { t: "People are asleep, and when they die, they awaken." },
+            { t: "Prophet Muhammad ﷺ said:\nThere are two blessings that many people are deceived into losing: health and free time.\n[Sahih al-Bukhari 6412]" },
+            { t: "Prophet Muhammad ﷺ said:\nMake things easy for the people, and do not make it difficult for them.\n[Sahih al-Bukhari 6125]" },
+            { t: "Prophet Muhammad ﷺ said:\nDo good deeds properly, sincerely and moderately.\n[Sahih al-Bukhari 6464]" },
+            { t: "Prophet Muhammad ﷺ said:\nSpeak good or remain silent.\n[Riyad as-Salihin 1511]" },
+            { t: "Prophet Muhammad ﷺ said:\nThe most beloved deed to Allah is the most regular and constant even if it were little.\n[Sahih al-Bukhari 6464]" },
+            { t: "Death is not the end of life; it is the beginning of a life that never ends." },
+            { t: "Character is who you are when no one is watching." },
+            { t: "Keep moving forward." },
+            { t: "If not now, Then when?" },
+            { t: "Leave a legacy. Let your life be a story of courage, action, and impact." },
+            { t: "NOW.\nWaiting won’t help.\nOverthinking won’t help.\nAction will.\nDo it." },
+            { t: "Lower your gaze, guard your tongue, and protect your heart." },
+            { t: "Your current life is the result of past actions. Your future will be the result of today's actions." },
+            { t: "The man who keeps walking will eventually leave the place he hates." },
+            { t: "A few years of sacrifice can create a lifetime of freedom." },
+            { t: "Your future is built by what you do after a long tiring day." },
+            { t: "Action may not always bring happiness, but there is no happiness without action." },
+            { t: "Stand straight. Speak clearly. Fear none."},
+            { t: "Its what's inside that matters." },
+            { t: "Every pro was once a beginner."},
+            { t: "Weak men wait for courage.\n Strong men create it through action."},
+            { t: "Be the man who acts while others are still thinking."},
+            { t: "Be so disciplined that even your bad days look like progress."},
+            { t: "A strong man doesn’t need motivation.\nHe acts because he decided."},
+            { t: "Pressure reveals the man within."}
+        ];
+
+        let _wakeLock = null;
+        let _l_i = null;
+        let _currentPool = [];
+        let _lastQuoteText = null;
+        let _history = [];
+        let _historyIndex = -1;
+
+        let _autoplayTimer = null;
+        let _longPressTimer = null;
+        let _statusTimer = null;
+        let _isLongPress = false;
+        let _isSwipe = false;
+        let _isCaseAnimating = false;
+        let _startX = 0;
+        let _startY = 0;
+        let _lastX = 0;
+        let _lastY = 0;
+
+        const _autoplayOptions = [
+            { label: "5 seconds", ms: 5000 },
+            { label: "10 seconds", ms: 10000 },
+            { label: "15 seconds", ms: 15000 },
+            { label: "30 seconds", ms: 30000 },
+            { label: "1 minute", ms: 60000 },
+            { label: "1 hour", ms: 3600000 },
+            { label: "8 hours", ms: 28800000 },
+            { label: "12 hours", ms: 43200000 },
+            { label: "24 hours", ms: 86400000 }
+        ];
+        let _currentDurationIndex = 2;
+
+        const _qx = document.getElementById('_q_');
+        const _st = document.getElementById('_st_');
+        const _mc = document.getElementById('_mc_');
+        const _apStatus = document.getElementById('_ap_status_');
+
+        // Keep screen awake while viewing
+        async function _requestWakeLock() {
+            try {
+                if ('wakeLock' in navigator) {
+                    _wakeLock = await navigator.wakeLock.request('screen');
+                }
+            } catch (err) {}
+        }
+
+        document.addEventListener('visibilitychange', async () => {
+            if (document.visibilityState === 'visible') {
+                await _requestWakeLock();
+            }
+        });
+
+        // Display transient feedback toast
+        function _showStatus(msg, isInteractive = false) {
+            if (!_apStatus) return;
+            if (_statusTimer) clearTimeout(_statusTimer);
+
+            _apStatus.innerText = msg;
+            if (isInteractive) {
+                _apStatus.classList.add('interactive');
+            } else {
+                _apStatus.classList.remove('interactive');
+            }
+
+            _apStatus.classList.add('visible');
+
+            const displayTime = isInteractive ? 3500 : 2200;
+
+            _statusTimer = setTimeout(() => {
+                _apStatus.classList.remove('visible');
+            }, displayTime);
+        }
+
+        if (_apStatus) {
+            _apStatus.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (_autoplayTimer) {
+                    _currentDurationIndex = (_currentDurationIndex + 1) % _autoplayOptions.length;
+                    _startAutoplay();
+                    const opt = _autoplayOptions[_currentDurationIndex];
+                    _showStatus(`Autoplay On (${opt.label})`, true);
+                }
+            });
+
+            _apStatus.addEventListener('touchstart', (e) => {
+                e.stopPropagation();
+            }, { passive: true });
+        }
+
+        // Fisher-Yates shuffle
+        function _shuffle(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // Fetch next unrepeated quote
+        function _getNextQuote() {
+            if (_currentPool.length === 0) {
+                let freshList = [..._db];
+                _shuffle(freshList);
+                if (freshList.length > 1 && freshList[freshList.length - 1].t === _lastQuoteText) {
+                    const head = freshList.pop();
+                    freshList.unshift(head);
+                }
+                _currentPool = freshList;
+            }
+            const choice = _currentPool.pop();
+            if (choice) _lastQuoteText = choice.t;
+            return choice || { t: "Stay Disciplined." };
+        }
+
+        // Calculate current time with live seconds and remaining minutes in the day
+        function _gs() {
+            const n = new Date();
+            let h = n.getHours();
+            const m = n.getMinutes().toString().padStart(2, '0');
+            const s = n.getSeconds().toString().padStart(2, '0');
+            const a = h >= 12 ? 'pm' : 'am';
+            h = h % 12 || 12;
+            const e = new Date(n.getFullYear(), n.getMonth(), n.getDate(), 23, 59, 59);
+            const d = e - n;
+            const ml = Math.max(0, Math.floor(d / 60000));
+            return { t: `${h}:${m}:${s} ${a}`, l: ml };
+        }
+
+        // Start 1-second live clock update for the time quote
+        function _startLiveClock() {
+            if (_l_i) clearInterval(_l_i);
+            const ux = () => {
+                const s = _gs();
+                _st.innerHTML = `Time: ${s.t} • ${s.l} minutes remaining today`;
+            };
+            ux();
+            _st.classList.remove('opacity-0');
+            _l_i = setInterval(ux, 1000);
+        }
+
+        // Transition and render selected quote
+        function _showQuote(nq) {
+            _st.classList.add('opacity-0');
+            if (_l_i) clearInterval(_l_i);
+
+            _qx.style.transition = 'opacity 0.35s ease-in-out';
+            _qx.style.opacity = '0';
+
+            setTimeout(() => {
+                _qx.innerText = nq.t;
+
+                if (nq.id === "t_q") {
+                    _startLiveClock();
+                } else {
+                    _st.innerHTML = "";
+                    _st.classList.add('opacity-0');
+                }
+
+                requestAnimationFrame(() => {
+                    _qx.style.transition = 'opacity 0.35s ease-in-out';
+                    _qx.style.opacity = '1';
+                });
+            }, 350);
+        }
+
+        // Toggle between Uppercase and standard case
+        function _setCase(isUpper) {
+            if (_isCaseAnimating) return;
+
+            const isCurrentUpper = _qx.style.textTransform === 'uppercase';
+            if (isUpper === isCurrentUpper) return;
+
+            _isCaseAnimating = true;
+
+            _qx.style.transition = 'opacity 0.35s ease-in-out';
+            _qx.style.opacity = '0';
+
+            const hasSubtitle = !_st.classList.contains('opacity-0') && _st.innerHTML !== "";
+            if (hasSubtitle) {
+                _st.style.transition = 'opacity 0.35s ease-in-out';
+                _st.style.opacity = '0';
+            }
+
+            setTimeout(() => {
+                _qx.style.textTransform = isUpper ? 'uppercase' : 'none';
+                _qx.style.fontFamily = isUpper ? "'Roboto', sans-serif" : "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
+                _qx.style.letterSpacing = isUpper ? '0.04em' : '-0.01em';
+                _qx.style.fontWeight = '300';
+
+                _st.style.textTransform = isUpper ? 'uppercase' : 'none';
+                _st.style.letterSpacing = isUpper ? '0.04em' : '0.02em';
+
+                requestAnimationFrame(() => {
+                    _qx.style.transition = 'opacity 0.35s ease-in-out';
+                    _qx.style.opacity = '1';
+                    if (hasSubtitle) {
+                        _st.style.transition = 'opacity 0.35s ease-in-out';
+                        _st.style.opacity = '';
+                    }
+                });
+
+                setTimeout(() => {
+                    _isCaseAnimating = false;
+                }, 350);
+            }, 350);
+
+            _showStatus(isUpper ? "Uppercase" : "Lowercase");
+        }
+
+        function _startAutoplay() {
+            if (_autoplayTimer) clearInterval(_autoplayTimer);
+            const intervalMs = _autoplayOptions[_currentDurationIndex].ms;
+            _autoplayTimer = setInterval(() => {
+                _next();
+            }, intervalMs);
+        }
+
+        function _stopAutoplay() {
+            if (_autoplayTimer) {
+                clearInterval(_autoplayTimer);
+                _autoplayTimer = null;
+            }
+        }
+
+        function _toggleAutoplay() {
+            if (_autoplayTimer) {
+                _stopAutoplay();
+                _showStatus("Autoplay Off");
+            } else {
+                _next();
+                _startAutoplay();
+                const opt = _autoplayOptions[_currentDurationIndex];
+                _showStatus(`Autoplay On (${opt.label})`, true);
+            }
+        }
+
+        function _next() {
+            if (_historyIndex < _history.length - 1) {
+                _historyIndex++;
+                _showQuote(_history[_historyIndex]);
+            } else {
+                const nq = _getNextQuote();
+                _history.push(nq);
+                _historyIndex = _history.length - 1;
+                _showQuote(nq);
+            }
+
+            if (_autoplayTimer) {
+                _startAutoplay();
+            }
+        }
+
+        function _prev() {
+            if (_historyIndex > 0) {
+                _historyIndex--;
+                _showQuote(_history[_historyIndex]);
+            }
+
+            if (_autoplayTimer) {
+                _startAutoplay();
+            }
+        }
+
+        window.onload = () => {
+            _requestWakeLock();
+
+            const i = _getNextQuote();
+            _history.push(i);
+            _historyIndex = 0;
+            
+            _qx.innerText = i.t;
+            _qx.style.opacity = '1';
+            
+            if (i.id === "t_q") {
+                _startLiveClock();
+            }
+
+            requestAnimationFrame(() => {
+                _mc.classList.add('v');
+            });
+        };
+
+        // Gesture & Pointer Handlers
+        function _startPress(x, y) {
+            _startX = x;
+            _startY = y;
+            _lastX = x;
+            _lastY = y;
+            _isLongPress = false;
+            _isSwipe = false;
+            if (_longPressTimer) clearTimeout(_longPressTimer);
+
+            _longPressTimer = setTimeout(() => {
+                _isLongPress = true;
+                if (navigator.vibrate) {
+                    try { navigator.vibrate(50); } catch(e){}
+                }
+                _toggleAutoplay();
+            }, 550);
+        }
+
+        function _movePress(x, y) {
+            _lastX = x;
+            _lastY = y;
+            const dx = Math.abs(x - _startX);
+            const dy = Math.abs(y - _startY);
+            if (dx > 10 || dy > 10) {
+                if (_longPressTimer) clearTimeout(_longPressTimer);
+            }
+        }
+
+        function _endPress() {
+            if (_longPressTimer) clearTimeout(_longPressTimer);
+
+            const dx = _lastX - _startX;
+            const dy = _lastY - _startY;
+            const absX = Math.abs(dx);
+            const absY = Math.abs(dy);
+
+            if (absX > 50 && absX > absY * 1.2) {
+                _isSwipe = true;
+                if (dx > 0) {
+                    if (_historyIndex > 0) {
+                        _prev();
+                        _showStatus("Previous Quote");
+                    }
+                } else {
+                    _next();
+                }
+            } 
+            else if (absY > 50 && absY > absX * 1.2) {
+                _isSwipe = true;
+                if (dy < 0) {
+                    _setCase(true);
+                } else {
+                    _setCase(false);
+                }
+            }
+        }
+
+        document.addEventListener('touchstart', (e) => {
+            _requestWakeLock();
+            _startPress(e.touches[0].clientX, e.touches[0].clientY);
+        }, { passive: true });
+
+        document.addEventListener('touchmove', (e) => {
+            _movePress(e.touches[0].clientX, e.touches[0].clientY);
+        }, { passive: true });
+
+        document.addEventListener('touchend', _endPress, { passive: true });
+        document.addEventListener('touchcancel', _endPress, { passive: true });
+
+        document.addEventListener('mousedown', (e) => {
+            if (e.button !== 0) return;
+            _requestWakeLock();
+            _startPress(e.clientX, e.clientY);
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            _movePress(e.clientX, e.clientY);
+        });
+
+        document.addEventListener('mouseup', _endPress);
+
+        document.addEventListener('click', (e) => {
+            _requestWakeLock();
+            if (_isSwipe) {
+                _isSwipe = false;
+                return;
+            }
+            if (_isLongPress) {
+                _isLongPress = false;
+                return;
+            }
+            _next();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            _requestWakeLock();
+            if (e.code === 'Space' || e.code === 'ArrowRight') {
+                _next();
+            } else if (e.code === 'ArrowLeft') {
+                if (_historyIndex > 0) {
+                    _prev();
+                    _showStatus("Previous Quote");
+                }
+            } else if (e.code === 'ArrowUp') {
+                _setCase(true);
+            } else if (e.code === 'ArrowDown') {
+                _setCase(false);
+            }
+        });
+
+    })();
+    </script>
+</body>
+</html>
 
